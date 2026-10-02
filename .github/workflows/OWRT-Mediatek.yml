@@ -8,6 +8,9 @@ on:
     workflows: ["Auto-Clean"]
     types:
       - completed
+  #每天自动编译一次：每天 07:00（北京时间）
+  schedule:
+    - cron: '0 23 * * *'
   #手动编译
   workflow_dispatch:
     inputs:
