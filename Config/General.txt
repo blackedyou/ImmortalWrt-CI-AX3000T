@@ -1,9 +1,10 @@
 #增加插件
 CONFIG_PACKAGE_luci-app-upnp=y
 CONFIG_PACKAGE_luci-app-smartdns=y
-CONFIG_PACKAGE_luci-app-wolultra=y
 CONFIG_PACKAGE_luci-app-tailscale=y
 CONFIG_PACKAGE_luci-app-autoreboot=y
+#代理插件：只保留 OpenClash
+CONFIG_PACKAGE_luci-app-openclash=y
 #删除插件
 CONFIG_PACKAGE_luci-app-wol=n
 CONFIG_PACKAGE_luci-app-attendedsysupgrade=n
