@@ -61,4 +61,6 @@ fi
 if [ -f "./package/libs/openssl/Makefile" ]; then
   sed -i 's/-DOPENSSL_PREFER_CHACHA_OVER_GCM//g' ./package/libs/openssl/Makefile
   echo "OpenSSL PREFER_CHACHA_OVER_GCM removed"
+else
+  echo "Warning: package/libs/openssl/Makefile not found, skip"
 fi
