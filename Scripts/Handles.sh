@@ -57,3 +57,8 @@ if [ -d "$FEEDS_PATH/packages/lang/rust" ]; then
 		echo "rust fix failed; continuing!"
 	fi
 fi
+# 强制移除 OpenSSL 中优先 ChaCha20 的编译参数，优先开启 AES-GCM
+if [ -f "./package/libs/openssl/Makefile" ]; then
+  sed -i 's/-DOPENSSL_PREFER_CHACHA_OVER_GCM//g' ./package/libs/openssl/Makefile
+  echo "OpenSSL PREFER_CHACHA_OVER_GCM removed"
+fi
