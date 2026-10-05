@@ -1,0 +1,23 @@
+name: Keepalive
+
+on:
+  schedule:
+    # 每月 1 号凌晨 2 点（UTC）运行一次，保证不超过 60 天
+    - cron: '0 2 1 * *'
+  workflow_dispatch:  # 支持手动触发
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Keep workflows alive
+        uses: gautamkrishnar/keepalive-workflow@v2
+        with:
+          # 使用 GitHub API 方式保活（不产生 commit，最干净）
+          use_api: true
+          # 可选：如果你想用 Personal Access Token（更稳定），取消下面注释并添加仓库 Secret
+          # gh_token: ${{ secrets.KEEPALIVE_TOKEN }}
