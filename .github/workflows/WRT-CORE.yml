@@ -130,8 +130,6 @@ jobs:
       - name: Check Scripts
         run: |
           find ./ -maxdepth 3 -type f -iregex ".*\(txt\|sh\)$" -exec dos2unix {} \; -exec chmod +x {} \;
-          # 强制移除 OpenSSL 中优先 ChaCha20 的编译参数，优先开启 AES-GCM
-          sed -i 's/-DOPENSSL_PREFER_CHACHA_OVER_GCM//g' package/libs/openssl/Makefile
 
       - name: Restore Build Cache
         id: cache-restore
