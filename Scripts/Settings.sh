@@ -43,3 +43,9 @@ echo "CONFIG_PACKAGE_luci-app-$WRT_THEME-config=y" >> ./.config
 if [ -n "$WRT_PACKAGE" ]; then
 	echo -e "$WRT_PACKAGE" >> ./.config
 fi
+
+# 在 Settings.sh 末尾添加
+# 设置 root 密码（请把下面的哈希换成你自己生成的完整哈希）
+sed -i 's|root::0:0:99999:7:::|root:$6$k5/jSZXlG2ccfxre$KPkdaJuT/Q.quOuVea8myEWDQHlAV7U0iwQgvalS1MqgolIUQkZXgkkOrm5yERDVsRK2lmglBfvTp5zD34SnA/:0:0:99999:7:::|' package/base-files/files/etc/shadow
+# 有的源码默认是 root:::0:99999:7::: 这种格式，也可以再加一行保险：
+sed -i 's|root:::0:99999:7:::|root:$6$k5/jSZXlG2ccfxre$KPkdaJuT/Q.quOuVea8myEWDQHlAV7U0iwQgvalS1MqgolIUQkZXgkkOrm5yERDVsRK2lmglBfvTp5zD34SnA/::0:99999:7:::|' package/base-files/files/etc/shadow
