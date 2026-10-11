@@ -4,13 +4,19 @@ CONFIG_PACKAGE_luci-app-smartdns=y
 CONFIG_PACKAGE_luci-app-tailscale=y
 CONFIG_PACKAGE_luci-app-autoreboot=y
 
-#代理插件：移除 OpenClash，增加 PassWall2 + Nikki
+#代理插件：移除 OpenClash 和 PassWall2，保留 Nikki，增加 frpc + ttyd
 # CONFIG_PACKAGE_luci-app-openclash is not set
-CONFIG_PACKAGE_luci-app-passwall2=y
+# CONFIG_PACKAGE_luci-app-passwall2 is not set
 CONFIG_PACKAGE_luci-app-nikki=y
 # 可选：中文语言包
-CONFIG_PACKAGE_luci-i18n-passwall2-zh-cn=y
+# CONFIG_PACKAGE_luci-i18n-passwall2-zh-cn is not set
 CONFIG_PACKAGE_luci-i18n-nikki-zh-cn=y
+
+# 新增 frp 和 ttyd
+CONFIG_PACKAGE_luci-app-frpc=y
+CONFIG_PACKAGE_luci-app-ttyd=y
+CONFIG_PACKAGE_luci-i18n-frpc-zh-cn=y
+CONFIG_PACKAGE_luci-i18n-ttyd-zh-cn=y
 
 #删除插件
 CONFIG_PACKAGE_luci-app-wol=n
@@ -22,12 +28,10 @@ CONFIG_PACKAGE_luci-app-uhttpd=y
 # 只保留经典主题 Argon
 CONFIG_PACKAGE_luci-theme-argon=y
 CONFIG_PACKAGE_luci-app-argon-config=y
-
 # 移除其他主题
 # CONFIG_PACKAGE_luci-theme-aurora is not set
 # CONFIG_PACKAGE_luci-theme-fluent is not set
 # CONFIG_PACKAGE_luci-app-aurora-config is not set
-
 CONFIG_PACKAGE_ddns-scripts-cloudflare=y
 
 #参数调整
