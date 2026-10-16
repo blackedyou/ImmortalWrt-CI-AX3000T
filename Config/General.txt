@@ -17,8 +17,6 @@ CONFIG_PACKAGE_luci-app-autoreboot=y
 # ========== 新增推流相关 ==========
 CONFIG_PACKAGE_go2rtc=y
 CONFIG_PACKAGE_ffmpeg=y
-# 如果空间还是紧张，可以只开精简版 ffmpeg（按实际编译结果调整）
-# CONFIG_PACKAGE_ffmpeg-full is not set
 
 #删除插件
 CONFIG_PACKAGE_luci-app-wol=n
