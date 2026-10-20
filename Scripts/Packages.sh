@@ -44,9 +44,13 @@ UPDATE_PACKAGE() {
 # UPDATE_PACKAGE "open-app-filter" "destan19/OpenAppFilter" "master" "" "luci-app-appfilter oaf" 这样会把原有的open-app-filter，luci-app-appfilter，oaf相关组件删除，不会出现coremark错误。
 
 # UPDATE_PACKAGE "包名" "项目地址" "项目分支" "pkg，可选，从大杂烩中单独提取包名插件"
+
 # 只保留经典主题 Argon
 UPDATE_PACKAGE "argon" "jerrykuku/luci-theme-argon" "master"
 UPDATE_PACKAGE "argon-config" "jerrykuku/luci-app-argon-config" "master"
+
+# 添加 wolultra（网络唤醒增强版）
+UPDATE_PACKAGE "viking" "VIKINGYFY/packages" "main" "" "luci-app-wolultra"
 
 # 以下代理插件全部注释，节省空间和时间
 # UPDATE_PACKAGE "momo" "nikkinikki-org/OpenWrt-momo" "main"
@@ -73,9 +77,6 @@ UPDATE_PACKAGE "argon-config" "jerrykuku/luci-app-argon-config" "master"
 # UPDATE_PACKAGE "easytier" "EasyTier/luci-app-easytier" "main"
 # UPDATE_PACKAGE "luci-app-tailscale" "asvow/luci-app-tailscale" "main"
 # UPDATE_PACKAGE "tailscale-community" "Tokisaki-Galaxy/luci-app-tailscale-community" "master"
-
-# UPDATE_PACKAGE "viking" "VIKINGYFY/packages" "main" "" "sing-box luci-app-homeproxy luci-app-timewol luci-app-wolplus luci-app-wolultra"
-
 
 #更新软件包版本
 UPDATE_VERSION() {
@@ -119,5 +120,5 @@ UPDATE_VERSION() {
 }
 
 #UPDATE_VERSION "软件包名" "测试版，true，可选，默认为否"
-#UPDATE_VERSION "sing-box"
-#UPDATE_VERSION "tailscale"
+# UPDATE_VERSION "sing-box"
+# UPDATE_VERSION "tailscale"
