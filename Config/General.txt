@@ -1,35 +1,36 @@
 #增加插件
 CONFIG_PACKAGE_luci-app-upnp=y
 CONFIG_PACKAGE_luci-app-smartdns=y
-CONFIG_PACKAGE_luci-app-tailscale=y
 CONFIG_PACKAGE_luci-app-autoreboot=y
+CONFIG_PACKAGE_luci-app-cpufreq=y
+CONFIG_PACKAGE_luci-app-ddns-go=y
+CONFIG_PACKAGE_luci-app-eqos=y
+CONFIG_PACKAGE_luci-app-nlbwmon=y
+CONFIG_PACKAGE_luci-app-sqm=y
+CONFIG_PACKAGE_luci-app-vlmcsd=y
+CONFIG_PACKAGE_luci-app-wolultra=y
 
-# ========== 代理插件精简（只保留 Tailscale）==========
-# 删除 Nikki、frpc、OpenClash、PassWall 等
+# ========== 代理插件精简 ==========
 # CONFIG_PACKAGE_luci-app-nikki is not set
 # CONFIG_PACKAGE_luci-i18n-nikki-zh-cn is not set
-
 # CONFIG_PACKAGE_luci-app-openclash is not set
 # CONFIG_PACKAGE_luci-app-passwall2 is not set
 # CONFIG_PACKAGE_luci-i18n-passwall2-zh-cn is not set
 
-# ========== 新增推流相关 ==========
-CONFIG_PACKAGE_go2rtc=y
-CONFIG_PACKAGE_ffmpeg=y
-
 #删除插件
 CONFIG_PACKAGE_luci-app-wol=n
 CONFIG_PACKAGE_luci-app-attendedsysupgrade=n
+# CONFIG_PACKAGE_luci-app-ddns is not set
+# CONFIG_PACKAGE_luci-app-tailscale is not set
 
 #个人需求插件
-# 新增 frp 和 ttyd
 CONFIG_PACKAGE_frpc=y
 CONFIG_PACKAGE_luci-app-frpc=y
 CONFIG_PACKAGE_luci-app-ttyd=y
 CONFIG_PACKAGE_luci-i18n-frpc-zh-cn=y
 CONFIG_PACKAGE_luci-i18n-ttyd-zh-cn=y
-CONFIG_PACKAGE_luci-app-ddns=y
 CONFIG_PACKAGE_luci-app-uhttpd=y
+
 # 只保留经典主题 Argon
 CONFIG_PACKAGE_luci-theme-argon=y
 CONFIG_PACKAGE_luci-app-argon-config=y
@@ -37,7 +38,6 @@ CONFIG_PACKAGE_luci-app-argon-config=y
 # CONFIG_PACKAGE_luci-theme-aurora is not set
 # CONFIG_PACKAGE_luci-theme-fluent is not set
 # CONFIG_PACKAGE_luci-app-aurora-config is not set
-CONFIG_PACKAGE_ddns-scripts-cloudflare=y
 
 #参数调整
 CONFIG_DEVEL=y
