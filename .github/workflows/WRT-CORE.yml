@@ -65,6 +65,27 @@ jobs:
       cache_prefix: ${{steps.initialize-values.outputs.cache_prefix}}
       cache_key: ${{steps.clone-code.outputs.cache_key}}
     steps:
+      # ========== 新增：清理磁盘空间 ==========
+      - name: Free Disk Space
+        run: |
+          echo "===== Before cleanup ====="
+          df -h
+
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /opt/ghc
+          sudo rm -rf /opt/hostedtoolcache/CodeQL
+          sudo rm -rf /opt/hostedtoolcache/go
+          sudo rm -rf /opt/hostedtoolcache/Python
+          sudo rm -rf /opt/hostedtoolcache/node
+          sudo rm -rf /usr/local/share/boost
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+          sudo apt-get clean
+          sudo apt-get autoremove -y
+
+          echo "===== After cleanup ====="
+          df -h
+
       - name: Checkout Projects
         uses: actions/checkout@main
 
